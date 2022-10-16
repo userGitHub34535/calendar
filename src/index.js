@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import DatePanel from './DatePanel.js';
-import Calendar from './Calendar.js';
+import SidePanel from './Components/SidePanel.js';
+import CalendarWeekView from './Components/CalendarWeekView.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <DatePanel />
-    <Calendar />
+    <SidePanel />
+    <CalendarWeekView />
   </React.StrictMode>
 );
