@@ -1,11 +1,11 @@
 import TimeLaboredForm from './TimeLaboredForm';
 
-export default function SidePanel() {
+export default function Sidebar() {
   
   
   return (
     <>
-      <button onClick={todo} >Create</button>
+      <button onClick >Create</button>
       <TimeLaboredForm />
     </>
   )

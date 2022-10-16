@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import '../SidePanel.css';
+import '../Sidebar.css';
 import DateTimePicker from 'react-datetime-picker';
 
 export default function DatePanel() {

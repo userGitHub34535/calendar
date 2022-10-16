@@ -13,9 +13,11 @@ const GlobalContext = createContext();
 
 //ans: this is wrapping the <MyContext.Provider> itself within a component that I export called <ContextWrapper>
 
-const [showTLForm, setShowTLForm] = useState(true);
+export default function ContextWrapper() {
+    const [showTLForm, setShowTLForm] = useState(true);
 
-<GlobalContext.Provider value={showTLForm}>
-
-
-</GlobalContext.Provider>
+    return (
+        <GlobalContext.Provider value={showTLForm}>
+        </GlobalContext.Provider>
+    );
+}
