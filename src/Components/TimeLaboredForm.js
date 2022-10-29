@@ -26,13 +26,8 @@ export default function DatePanel() {
   //have TLs as state with a setter too i.e. const [TLs, setTLs] = useState();
 
   const saveTL = () => {
-    // console.log(startTime); //todo-delete
-    // console.log(endTime);
-    console.log(savedTLs);
     const TL = {startTime, endTime, description};
     const TLs = savedTLs.concat(TL);
-    //TLs.push(TL);
-    console.log(savedTLs);
     setSavedTLs(TLs);
   };
 

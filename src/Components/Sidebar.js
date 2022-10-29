@@ -5,11 +5,7 @@ import TimeLaboredForm from './TimeLaboredForm';
 
 export default function Sidebar() {
   const {showTLForm
-    , setShowTLForm
-    , savedTLs} = useContext(GlobalContext);
-
-  console.log(setShowTLForm); 
-  console.log(showTLForm);
+    , setShowTLForm} = useContext(GlobalContext);
 
   return (
     <>
@@ -18,8 +14,6 @@ export default function Sidebar() {
         alert("clicked Create");
       }}>Create</button>
       <p>{showTLForm.toString()}</p>
-      {console.log(savedTLs)}
-      {/* <p>{savedTLs.length != 0 ? savedTLs[0].description : "null"}</p> */}
       <TimeLaboredForm />
     </>
   )
