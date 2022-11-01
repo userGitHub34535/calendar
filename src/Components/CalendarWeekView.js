@@ -1,6 +1,7 @@
 import React from 'react';
+import {format} from 'date-fns';
 import Hour from './Hour';
-import '../Styles/Grid.css';
+import '../Styles/CalendarWeekView.css';
 
 const getCurWeek7_24 = (date) => {
     //todo- I need to throw an exception if the object passed in is not a date.
@@ -58,14 +59,29 @@ export default function CalendarWeekView() {
 
     const multiArray = getCurWeek7_24( new Date(new Date().setDate(14))  );
     
+    const yAxisLabels = ['', '12A', '1A', '2A', '3A', '4A', '5A', '6A', '7A', '8A', '9A', '10A', '11A'
+                        ,'12P', '1P', '2P', '3P', '4P', '5P', '6P', '7P', '8P', '9P', '10P', '11P'];
 
-    return (        
-        <div className="container">
-            {multiArray.map((all24HoursInDay) => (
-                all24HoursInDay.map((someHourInDay, i) => <Hour hour={someHourInDay} key={i}/>)
-            ))}
+    return ( 
+        <>  
+            <div className="calendarWeekViewContainer">
+                <div className="yAxisLabels">
+                    {yAxisLabels.map((num) => <label>{num}</label>)}
+                </div>
+                <div className="xAxisAndSeven24">     
+                    <div className="xAxisHeader">
+                        {multiArray.map((all24HoursInDay) => 
+                            <label className="xAxisLabels">{format(all24HoursInDay[0], "EEE, dd'th'")}</label>
+                        )}
+                    </div>
+                    <div className="seven24Container">
+                        {multiArray.map((all24HoursInDay) => (
+                            all24HoursInDay.map((someHourInDay, i) => <Hour hour={someHourInDay} key={i}/>)
+                        ))}
+                    </div>
+                </div>
+            </div>
 
-            
-        </div>
+        </>
     )
 };
