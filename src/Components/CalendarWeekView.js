@@ -57,7 +57,7 @@ export default function CalendarWeekView() {
     // console.log(getCurWeek7_24(new Date()));
     // console.log(getCurWeek7_24(  new Date((new Date()).setDate(3))  ));
 
-    const multiArray = getCurWeek7_24( new Date(new Date().setDate(14))  );
+    const multiArray = getCurWeek7_24( new Date(new Date()));//.setDate(14))  );
     
     const yAxisLabels = ['', '12A', '1A', '2A', '3A', '4A', '5A', '6A', '7A', '8A', '9A', '10A', '11A'
                         ,'12P', '1P', '2P', '3P', '4P', '5P', '6P', '7P', '8P', '9P', '10P', '11P'];
@@ -71,7 +71,7 @@ export default function CalendarWeekView() {
                 <div className="xAxisAndSeven24">     
                     <div className="xAxisHeader">
                         {multiArray.map((all24HoursInDay) => 
-                            <label className="xAxisLabels">{format(all24HoursInDay[0], "EEE, dd'th'")}</label>
+                            <label className="xAxisLabels">{format(all24HoursInDay[0], "EEE, d'th'")}</label>
                         )}
                     </div>
                     <div className="seven24Container">
